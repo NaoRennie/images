@@ -1,38 +1,34 @@
 <template>
-    <div class="ui secondary pointing menu">
-        <router-link to="/" class="item">
-        Image Storage
-        </router-link>
-        <div class="right menu">
-            <div v-if="isLoggedIn" class="horizonrtal">
-                <router-link to="/" class="item">Gallaries</router-link>
-                <router-link to="upload" class="item">Upload</router-link>
-                <a class="item" @click="logout">Logout</a>
-            </div>
-            <a v-else href="#" class="ui item" @click="login">
-             login
-            </a>
-        </div>
+  <div class="ui secondary pointing menu">
+    <router-link to="/" class="item">Image Storage</router-link>
+    <div class="right menu">
+      <div v-if="isLoggedIn" class="horizonrtal">
+        <router-link to="/" class="item">Gallaries</router-link>
+        <router-link to="upload" class="item">Upload</router-link>
+        <a class="item" @click="logout">Logout</a>
+      </div>
+      <a v-else href="#" class="ui item" @click="login">login</a>
     </div>
+  </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapGetters } from "vuex";
 
 export default {
-    name: 'AppHeader',
-    computed: {
-        ...mapGetters(['isLoggedIn'])
-    },
-    methods: {
-        ...mapActions(['login','logout'])
-    }
-}
+  name: "AppHeader",
+  computed: {
+    ...mapGetters(["isLoggedIn"])
+  },
+  methods: {
+    ...mapActions(["login", "logout"])
+  }
+};
 </script>
 
 <style scoped>
-    .horizonrtal {
-        display: flex;
-        flex-direction: row;
-    }
+.horizonrtal {
+  display: flex;
+  flex-direction: row;
+}
 </style>
